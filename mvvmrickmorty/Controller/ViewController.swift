@@ -7,8 +7,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -45,14 +43,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return self.characterVC == nil ? 0 : self.characterVC.numberOfSections
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.characterVC.numberOfRowsInSections(section)
     }
+   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CharacterTableViewCell else {
@@ -76,18 +77,16 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
-     
-    
 }
 
 extension ViewController: UISearchBarDelegate {
    
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
        
         guard let character = searchBar.text else {return showAlert(message: "Digite Algo")}
             
             let url = URL(string: "https://rickandmortyapi.com/api/character/?name=\(character)")!
+            
             Webservice().getData(url: url) { characters in
                 
                 if let characters = characters {
