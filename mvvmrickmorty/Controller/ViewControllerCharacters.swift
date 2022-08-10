@@ -20,7 +20,7 @@ class ViewControllerCharacters: UIViewController {
         
         let url = URL(string: "https://rickandmortyapi.com/api/character")!
     
-        Webservice().getData(url: url) { characters in
+        Webservice().getDataCharacter(url: url) { characters in
             
             if let characters = characters {
     
@@ -29,16 +29,8 @@ class ViewControllerCharacters: UIViewController {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
+            }
         }
-        }
-    }
-    
-    func showAlert (message: String) {
-        
-        let alert = UIAlertController(title: "Não encontrado", message: message, preferredStyle: .alert)
-        
-        alert.addAction(.init(title: "OK", style: .default, handler: nil))
-
     }
 }
 
@@ -56,7 +48,7 @@ extension ViewControllerCharacters: UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CharacterTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "charactercell", for: indexPath) as? CharacterTableViewCell else {
             fatalError("Cell not found")
         }
         
@@ -83,11 +75,11 @@ extension ViewControllerCharacters: UISearchBarDelegate {
    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
        
-        guard let character = searchBar.text else {return showAlert(message: "Digite Algo")}
+        guard let character = searchBar.text else {return}
             
             let url = URL(string: "https://rickandmortyapi.com/api/character/?name=\(character)")!
             
-            Webservice().getData(url: url) { characters in
+            Webservice().getDataCharacter(url: url) { characters in
                 
                 if let characters = characters {
         

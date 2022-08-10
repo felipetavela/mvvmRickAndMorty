@@ -11,7 +11,7 @@ class Webservice {
 
     }
     
-    func getData (url: URL, completion: @escaping ([Character]?) -> ()) {
+    func getDataCharacter (url: URL, completion: @escaping ([Character]?) -> ()) {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             
@@ -24,6 +24,23 @@ class Webservice {
                 
                 if let characterResponse = characterResponse {
                     completion(characterResponse.results)
+                }
+            }
+        }.resume()
+    }
+    
+    func getDataLocation (url: URL, completion: @escaping ([Location]?) -> ()) {
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            if let error = error {
+                fatalError(error.localizedDescription)
+            } else if let data = data {
+                
+                let locationResponse = try? JSONDecoder().decode(ResultLocation.self, from: data)
+                
+                if let locationResponse = locationResponse {
+                    completion(locationResponse.results)
                 }
             }
         }.resume()
