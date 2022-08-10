@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewControllerCharacters: UIViewController {
 
     private var characterVC: CharacterListViewModel!
     
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewControllerCharacters: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -79,7 +79,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UISearchBarDelegate {
+extension ViewControllerCharacters: UISearchBarDelegate {
    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
        

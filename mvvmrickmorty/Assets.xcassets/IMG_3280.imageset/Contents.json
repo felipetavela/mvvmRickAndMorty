@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "IMG_3280-2.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

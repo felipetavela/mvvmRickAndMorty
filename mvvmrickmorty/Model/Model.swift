@@ -14,3 +14,5 @@ struct Character: Decodable {
     let image: String
     
 }
+
+
