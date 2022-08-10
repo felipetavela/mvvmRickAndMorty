@@ -20,7 +20,7 @@ class Webservice {
                 fatalError(error.localizedDescription)
             } else if let data = data {
                 
-                let characterResponse = try? JSONDecoder().decode(Result.self, from: data)
+                let characterResponse = try? JSONDecoder().decode(ResultCharacter.self, from: data)
                 
                 if let characterResponse = characterResponse {
                     completion(characterResponse.results)

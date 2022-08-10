@@ -1,6 +1,6 @@
 import Foundation
 
-struct Result: Decodable {
+struct ResultCharacter: Decodable {
 
     let results: [Character]
 }
