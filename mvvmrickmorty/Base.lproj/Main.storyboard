@@ -51,6 +51,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="sD6-Mh-dvu"/>
+                    <connections>
+                        <outlet property="characterButton" destination="21r-J6-Dn7" id="mZV-Mh-2Fz"/>
+                        <outlet property="locationsButton" destination="bOZ-qw-xpG" id="Fs6-pY-dUX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCC-z0-Tcd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

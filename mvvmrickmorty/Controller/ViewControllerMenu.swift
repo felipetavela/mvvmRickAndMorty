@@ -3,10 +3,16 @@ import UIKit
 
 class ViewControllerMenu: UIViewController {
     
+    @IBOutlet weak var characterButton: UIButton!
+    @IBOutlet weak var locationsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "IMG_3280")!)
+        
+        characterButton.layer.cornerRadius = 10
+        locationsButton.layer.cornerRadius = 10
         
        }
     }
