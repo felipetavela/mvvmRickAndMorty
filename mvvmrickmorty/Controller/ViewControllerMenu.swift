@@ -9,7 +9,7 @@ class ViewControllerMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "IMG_3280")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rick")!)
         
         characterButton.layer.cornerRadius = 10
         locationsButton.layer.cornerRadius = 10

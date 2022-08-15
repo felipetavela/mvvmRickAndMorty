@@ -54,10 +54,18 @@ extension ViewControllerCharacters: UITableViewDataSource {
         
         let characterVC = self.characterVC.characterAtIndex(indexPath.row)
         
+        switch characterVC.status {
+       
+        case "Dead": cell.statusLabel.text = "💀"
+        case "Alive": cell.statusLabel.text = "🫀"
+        case "unknown": cell.statusLabel.text = "🤷🏻"
+        default: cell.statusLabel.text = ""
+            
+        }
+        
         cell.nameLabel.text = characterVC.name
         cell.genderLabel.text = characterVC.gender
         cell.specieLabel.text = characterVC.species
-        cell.statusLabel.text = characterVC.status
         cell.myImage.layer.cornerRadius = 36
         cell.myImage.layer.borderColor = CGColor.init(red: 0, green: 1, blue: 0, alpha: 1)
         cell.myImage.layer.borderWidth = 1
