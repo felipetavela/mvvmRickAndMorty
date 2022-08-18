@@ -16,6 +16,7 @@ class ViewControllerLocations: UIViewController {
         tableView.dataSource = self
         searchBar.delegate = self
         
+        self.hideKeyboardWhenTappedAround() 
     }
     
     func setup () {
