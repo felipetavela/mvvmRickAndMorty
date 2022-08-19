@@ -67,7 +67,7 @@ extension ViewControllerCharacters: UITableViewDataSource {
         cell.nameLabel.text = characterVC.name
         cell.genderLabel.text = characterVC.gender
         cell.specieLabel.text = characterVC.species
-        cell.myImage.layer.cornerRadius = 36
+        cell.myImage.layer.cornerRadius = 25
         cell.myImage.layer.borderColor = CGColor.init(red: 0, green: 1, blue: 0, alpha: 1)
         cell.myImage.layer.borderWidth = 1
         
